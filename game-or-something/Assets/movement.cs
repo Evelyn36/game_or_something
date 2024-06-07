@@ -14,16 +14,16 @@ public class movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            player.AddForce(new Vector2(-2, 0));
+            player.AddForce(new Vector2(-200, 0));
 
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            player.AddForce(new Vector2(2, 0));
+            player.AddForce(new Vector2(200, 0));
         }
     }
 }
