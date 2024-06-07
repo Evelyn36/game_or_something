@@ -20,12 +20,12 @@ public class movement : MonoBehaviour
         speed = movementSpeed / 100;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter(Collider col)
     {
         colliding = true;
         Debug.Log("hello");
     }
-    void OnCollisionExit2D(Collision2D collision)
+    void OnTriggerExit(Collider col)
     {
         colliding = false;
     }
