@@ -10,7 +10,7 @@ public class movement : MonoBehaviour
     public float movementSpeed;
     private float speed;
 
-    private bool colliding;
+  
 
     // Start is called before the first frame update
     void Start()
@@ -20,22 +20,9 @@ public class movement : MonoBehaviour
         speed = movementSpeed / 100;
     }
 
-    void OnTriggerEnter(Collider col)
-    {
-        colliding = true;
-        Debug.Log("hello");
-    }
-    void OnTriggerExit(Collider col)
-    {
-        colliding = false;
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!(colliding))
-        {
-
             if (Input.GetKey(KeyCode.A))
             {
                 player.transform.position = new Vector2(player.transform.position.x - speed, player.transform.position.y);
@@ -56,7 +43,6 @@ public class movement : MonoBehaviour
                 player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - speed);
             }
 
-        }
-
+        
     }
 }
