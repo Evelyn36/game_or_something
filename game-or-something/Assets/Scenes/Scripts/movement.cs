@@ -22,6 +22,8 @@ public class movement : MonoBehaviour
     private bool Up;
     private bool Down;
 
+    private Vector2 moveInput;
+
     [SerializeField] private TrailRenderer tr;
 
     // Start is called before the first frame update
@@ -42,88 +44,46 @@ public class movement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) && canDash)
         {
-            
-            StartCoroutine(Dash());
+            moveInput.x = Input.GetAxisRaw("Horizontal");
+            moveInput.y = Input.GetAxisRaw("Vertical");
+
+            moveInput.Normalize();
+
+            prb.velocity = moveInput * speed;
+            StartCoroutine(Dash(moveInput));
         }
         
     }
 
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         if (!(isDashing))
         {
-            if (Input.GetKey(KeyCode.A))
-            {
-                player.transform.position = new Vector2(player.transform.position.x - speed, player.transform.position.y);
-                Left = true;
-            }
-            else
-            {
-                Left = false;
-            }
+            moveInput.x = Input.GetAxisRaw("Horizontal");
+            moveInput.y = Input.GetAxisRaw("Vertical");
 
-            if (Input.GetKey(KeyCode.D))
-            {
-                player.transform.position = new Vector2(player.transform.position.x + speed, player.transform.position.y);
-                Right = true;
-            }
-            else
-            {
-                Right = false;
-            }
+            moveInput.Normalize();
 
-
-            if (Input.GetKey(KeyCode.W))
-            {
-                player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + speed);
-                Up = true;
-            }
-            else
-            {
-                Up = false;
-            }
-
-
-            if (Input.GetKey(KeyCode.S))
-            {
-                player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - speed);
-                Down = true;
-            }
-            else
-            {
-                Down = false;
-            }
+            prb.velocity = moveInput * speed;
+         
+            
         }
 
         
 
     }
-    private IEnumerator Dash()
+    private IEnumerator Dash(Vector2 MInput)
     {
         canDash = false;
         isDashing = true;
         tr.emitting = true;
         for (int i = 0; i < 10; i++)
         {
-            if (Right)
-            {
-                player.transform.position = new Vector2(player.transform.position.x + dashingPower, player.transform.position.y);
-            }
-            else if (Left)
-            {
-                player.transform.position = new Vector2(player.transform.position.x - dashingPower, player.transform.position.y);
-            }
 
-            if (Up)
-            {
-                player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + dashingPower);
-            }
-            else if (Down)
-            {
-                player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - dashingPower);
-            }
-            
+
+            prb.velocity = MInput * dashingPower;
+
             yield return new WaitForSeconds(dashingTime / 10);
         }
         

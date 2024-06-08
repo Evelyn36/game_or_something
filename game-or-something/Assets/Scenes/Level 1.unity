@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a44ce6ac60af34d9f1e37e8b07cb7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 6.85
-  dashingPower: 0.28
+  movementSpeed: 300
+  dashingPower: 20
   dashingTime: 0.18
   dashingCooldown: 0.8
   tr: {fileID: 255786066}
