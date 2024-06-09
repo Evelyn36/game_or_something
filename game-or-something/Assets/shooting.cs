@@ -13,9 +13,9 @@ public class shooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && can_shoot)
         {
-            
+            StartCoroutine(shoot());
 
         }
 
@@ -23,8 +23,10 @@ public class shooting : MonoBehaviour
 
     private IEnumerator shoot() 
     {
+        can_shoot = false;
         Instantiate(bullet, gameObject.transform);
         yield return new WaitForSeconds(refresh_time);
+        can_shoot=true;
 
     }
 
