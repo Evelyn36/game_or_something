@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.12548943, g: 0.21127526, b: 0.8490566, a: 1}
+  m_Color: {r: 0.12549017, g: 0.28996855, b: 0.8509804, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -127,6 +127,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 6.85
+  dashingPower: 24
+  dashingTime: 0.2
+  dashingCooldown: 1
+  tr: {fileID: 0}
 --- !u!50 &6923642356638580921
 Rigidbody2D:
   serializedVersion: 4
