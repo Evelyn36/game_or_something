@@ -2962,6 +2962,10 @@ PrefabInstance:
       propertyPath: bullet_clip_amount
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6370404672793673912, guid: 2c46d2fdeab336449bf6dddf6b38963b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.49019608
+      objectReference: {fileID: 0}
     - target: {fileID: 6370404672793673913, guid: 2c46d2fdeab336449bf6dddf6b38963b, type: 3}
       propertyPath: m_RootOrder
       value: 0
