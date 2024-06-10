@@ -10,11 +10,21 @@ public class shooting : MonoBehaviour
     public float range;
     public float bullet_speed;
     public float bullet_damage;
+    public int bullet_clip_amount;
+    public float reload_time;
+
     private bool can_shoot = true;
+    public bool reloading = false;
+    public int bullets;
+
+    private void Start()
+    {
+        bullets = bullet_clip_amount;
+    }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && can_shoot)
+        if (Input.GetMouseButtonDown(0) && can_shoot && reloading == false)
         {
             StartCoroutine(shoot());
 
@@ -25,9 +35,24 @@ public class shooting : MonoBehaviour
     private IEnumerator shoot() 
     {
         can_shoot = false;
+        bullets -= 1;
         Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation, null);
         yield return new WaitForSeconds(refresh_time);
+        if (bullets <= 0)
+        {
+            StartCoroutine(reload());
+        }
         can_shoot=true;
+
+    }
+
+
+    private IEnumerator reload()
+    {
+        reloading = true;
+        yield return new WaitForSeconds(reload_time);
+        bullets = bullet_clip_amount;
+        reloading = false;
 
     }
 

@@ -14,7 +14,7 @@ public class sword_attack : MonoBehaviour
         {
             attack();
             Debug.Log("attacked");
-            gameObject.transform.Rotate(GetComponentInParent<Transform>().position, attack_angle);
+            
 
         }
     }
