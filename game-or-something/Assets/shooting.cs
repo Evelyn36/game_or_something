@@ -8,7 +8,8 @@ public class shooting : MonoBehaviour
 
     public float refresh_time;
     public float range;
-
+    public float bullet_speed;
+    public float bullet_damage;
     private bool can_shoot = true;
 
     void Update()
@@ -24,7 +25,7 @@ public class shooting : MonoBehaviour
     private IEnumerator shoot() 
     {
         can_shoot = false;
-        Instantiate(bullet, gameObject.transform);
+        Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation, null);
         yield return new WaitForSeconds(refresh_time);
         can_shoot=true;
 
