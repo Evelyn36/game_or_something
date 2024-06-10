@@ -26,7 +26,8 @@ public class reloading_UI : MonoBehaviour
         }
         else
         {
-            tmp.text = shooting.bullets.ToString();
+            tmp.text = "";
         }
+       
     }
 }
