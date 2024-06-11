@@ -14,7 +14,7 @@ public class attack_sword : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isAttacking == false)
+        if (Input.GetMouseButtonDown(1) && isAttacking == false)
         {
             StartCoroutine(wait(Instantiate(sword, gameObject.transform.position, Quaternion.identity, gameObject.transform)));
 
@@ -25,7 +25,8 @@ public class attack_sword : MonoBehaviour
     {
         
         isAttacking = true;
-        yield return new WaitForSeconds(0.2f);
+        
+        yield return new WaitForSeconds(0.25f);
         Destroy(Sword);
         isAttacking = false;
     }

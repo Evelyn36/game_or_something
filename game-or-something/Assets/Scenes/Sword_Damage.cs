@@ -8,6 +8,7 @@ public class Sword_Damage : MonoBehaviour
     private Enemy enemy;
 
     public float SwordDamage;
+    public float knockback_strength;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,8 @@ public class Sword_Damage : MonoBehaviour
         {
             enemy = collision.GetComponent<Enemy>();
             enemy.TakeDamage(SwordDamage);
+            knockback_feedback knockback_script = collision.GetComponent<knockback_feedback>();
+            knockback_script.PlayFeedback(gameObject, knockback_strength);
         }
 
     }

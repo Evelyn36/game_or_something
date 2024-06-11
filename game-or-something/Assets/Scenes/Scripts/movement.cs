@@ -42,7 +42,7 @@ public class movement : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButtonDown(1) && canDash)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
