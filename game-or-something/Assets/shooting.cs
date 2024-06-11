@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class shooting : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class shooting : MonoBehaviour
     public float bullet_damage;
     public int bullet_clip_amount;
     public float reload_time;
+    public float bullet_knockback;
 
     private bool can_shoot = true;
     public bool reloading = false;
     public int bullets;
+
+    public UnityEvent OnBegin, OnDone;
 
     private void Start()
     {
@@ -24,7 +28,7 @@ public class shooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && can_shoot && reloading == false)
+        if (Input.GetMouseButton(0) && can_shoot && reloading == false)
         {
             StartCoroutine(shoot());
 
@@ -55,5 +59,8 @@ public class shooting : MonoBehaviour
         reloading = false;
 
     }
+
+
+
 
 }

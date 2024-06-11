@@ -20,7 +20,7 @@ public class UI_bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        image.sizeDelta = new Vector2(34, shooting.bullets * 33);
+        image.sizeDelta = new Vector2(70.68f, shooting.bullets * 66);
 
     }
 }

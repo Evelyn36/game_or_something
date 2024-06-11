@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
     Transform target;
     Vector2 moveDirection;
 
+
+  
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,6 +28,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        
         if (target)
         {
             Vector3 direction = (target.position - transform.position).normalized;
@@ -37,6 +41,8 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
+        //if they're stunned (by a bullet) then they stop moving
         if (target)
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
 
@@ -56,5 +62,9 @@ public class Enemy : MonoBehaviour
         }
 
     }
+
+    
+
+
 
 }

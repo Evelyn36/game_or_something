@@ -25,9 +25,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6370404672793673914}
-  m_LocalRotation: {x: -0, y: -0, z: 0.70968395, w: 0.7045202}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7096814, w: 0.7045228}
   m_LocalPosition: {x: 0, y: 0.56, z: 0}
-  m_LocalScale: {x: 0.7487, y: 0.3643, z: 1}
+  m_LocalScale: {x: 3.2497575, y: 1.5812564, z: 4.3405333}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+  m_Color: {r: 0.49019608, g: 0.5943396, b: 0.5943396, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,7 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5654995087441138619, guid: 70d7ad5c3df7d2b499af751bd26f0978, type: 3}
-  refresh_time: 0.15
+  refresh_time: 0.1
   range: 0
   bullet_speed: 20
   bullet_damage: 1
+  bullet_clip_amount: 3
+  reload_time: 3
+  bullet_knockback: 5
+  reloading: 0
+  bullets: 0
