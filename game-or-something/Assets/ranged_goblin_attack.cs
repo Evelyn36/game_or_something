@@ -13,7 +13,14 @@ public class ranged_goblin_attack : MonoBehaviour
     public float range = 1;
     public float attack_cooldown = 3;
 
-    private bool can_shoot = true;
+    private bool can_shoot = false;
+
+
+    private void Start()
+    {
+        StartCoroutine(wait());
+        
+    }
 
     private void FixedUpdate()
     {
@@ -46,6 +53,13 @@ public class ranged_goblin_attack : MonoBehaviour
         yield return new WaitForSeconds(attack_cooldown);
         can_shoot = true;
 
+    }
+
+    private IEnumerator wait()
+    {
+
+        yield return new WaitForSeconds(0.5f);
+        can_shoot = true;
     }
 
 }
