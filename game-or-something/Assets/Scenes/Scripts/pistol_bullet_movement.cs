@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class bullet_movement : MonoBehaviour
+public class pistol_bullet_movement : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] private GameObject gun;

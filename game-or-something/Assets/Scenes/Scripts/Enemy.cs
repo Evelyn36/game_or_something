@@ -9,12 +9,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] float health, maxHealth = 3f;
 
     [SerializeField] float moveSpeed = 1f;
+
+
     Rigidbody2D rb;
-    Transform target;
+     public Transform target;
     Vector2 moveDirection;
 
+    private Vector3 direction;
 
-  
+    public bool inrange = false;
 
     private void Awake()
     {
@@ -31,7 +34,7 @@ public class Enemy : MonoBehaviour
         
         if (target)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
+            direction = (target.position - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             rb.rotation = angle;
             moveDirection = direction;
@@ -43,8 +46,15 @@ public class Enemy : MonoBehaviour
     {
         
         //if they're stunned (by a bullet) then they stop moving
-        if (target)
+        if (target && inrange == false)
+        {
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+        }
+       
+
+
+
+            
 
     }
 
