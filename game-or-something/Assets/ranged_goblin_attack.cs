@@ -29,11 +29,11 @@ public class ranged_goblin_attack : MonoBehaviour
         Vector2 goblinposition = new Vector2(transform.position.x, transform.position.y);
 
         float Distance = Vector2.Distance(playerposition, goblinposition);
-        Debug.Log(Distance < range);
+        
 
         if (enemy.target && Distance < range && can_shoot)
         {
-            Debug.Log("yes");
+            
             enemy.inrange = true;
             Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation, null);
             StartCoroutine(cooldown());

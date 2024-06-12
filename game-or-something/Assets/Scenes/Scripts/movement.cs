@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,19 +9,23 @@ public class movement : MonoBehaviour
     private Transform player;
     private BoxCollider2D hitbox;
     private Rigidbody2D prb;
-    public float movementSpeed;
-    private float speed;
+    public float MaxmovementSpeed;
+    private float Maxspeed;
+    public float acceleration;
+    public float deacceleration;
+    public float current_speedx;
+    public float current_speedy;
+    public float current_speed;
+    public float current_forward_direction = 1;
+
+    private float vectorx;
+    private float vectory;
 
     private bool canDash = true;
     private bool isDashing;
     public float dashingPower = 24f;
     public float dashingTime = 0.2f;
     public float dashingCooldown = 1f;
-
-    private bool Right;
-    private bool Left;
-    private bool Up;
-    private bool Down;
 
     private Vector2 moveInput;
 
@@ -32,7 +37,7 @@ public class movement : MonoBehaviour
         player = GetComponent<Transform>();
         hitbox = GetComponent<BoxCollider2D>();
         prb = GetComponent<Rigidbody2D>();
-        speed = movementSpeed / 100;
+        Maxspeed = MaxmovementSpeed / 100;
     }
 
     void Update()
@@ -49,7 +54,7 @@ public class movement : MonoBehaviour
 
             moveInput.Normalize();
 
-            prb.velocity = moveInput * speed;
+            prb.velocity = moveInput * Maxspeed;
             StartCoroutine(Dash(moveInput));
         }
 
@@ -59,6 +64,43 @@ public class movement : MonoBehaviour
     }
 
 
+    public void Move(Vector2 movementVector)
+    {
+        moveInput = movementVector;
+        CalulateSpeed(movementVector);
+        
+    }
+
+    private void CalulateSpeed(Vector2 movementVector)
+    {
+        if (Mathf.Abs(moveInput.y) > 0)
+        {
+            current_speedy += acceleration * Time.deltaTime;
+        }
+        else
+        {
+            current_speedy -= deacceleration * Time.deltaTime;
+            
+        }
+
+
+        current_speedy = Mathf.Clamp(current_speedy, 0, Maxspeed);
+        if (Mathf.Abs(moveInput.x) > 0)
+        {
+            current_speedx += acceleration * Time.deltaTime;
+        }
+        else
+        {
+            current_speedx -= deacceleration * Time.deltaTime;
+            
+        }
+
+
+        current_speedx = Mathf.Clamp(current_speedx, 0, Maxspeed);
+
+        current_speed = Math.Max(current_speedx, current_speedy);
+    }
+
     void FixedUpdate()
     {
         if (!(isDashing))
@@ -67,8 +109,44 @@ public class movement : MonoBehaviour
             moveInput.y = Input.GetAxisRaw("Vertical");
 
             moveInput.Normalize();
+            Move(moveInput);
 
-            prb.velocity = moveInput * speed;
+           
+
+            
+            if (moveInput.x == 0 && moveInput.y == 0)
+            {
+                if (prb.velocity.x > 0)
+                {
+                    vectorx = current_speed;
+                } else if (prb.velocity.x < 0)
+                {
+                    vectorx = -current_speed;
+                }
+                else
+                {
+                    vectorx = 0;
+                }
+
+                if (prb.velocity.y > 0)
+                {
+                    vectory = current_speed;
+                }
+                else if (prb.velocity.y < 0)
+                {
+                    vectory = -current_speed;
+                }
+                else
+                {
+                    vectory = 0;
+                }
+                prb.velocity = new Vector2(vectorx, vectory);
+            }
+            else
+            {
+                prb.velocity = new Vector2(moveInput.x * current_speed, moveInput.y * current_speed);
+            }
+            
          
             
         }

@@ -3097,17 +3097,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3329679914980379209, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: acceleration
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329679914980379209, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: deacceleration
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329679914980379209, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: MaxmovementSpeed
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 3329679914980379210, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3329679914980379210, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -1.74
       objectReference: {fileID: 0}
     - target: {fileID: 3329679914980379210, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: 3329679914980379210, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
       propertyPath: m_LocalPosition.z
