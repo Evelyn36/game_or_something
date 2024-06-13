@@ -10,16 +10,15 @@ public class Sword_Damage : MonoBehaviour
     public float SwordDamage;
     public float knockback_strength;
 
+    public Animator animate;
     // Start is called before the first frame update
     void Start()
     {
-       
-    }
 
+    }
     // Update is called once per frame
     void Update()
     {
-        
 
 
     }
