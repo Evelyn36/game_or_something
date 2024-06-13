@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: CubeTest_0
+  m_Name: Gray Lego Bricks_7
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 2077464756, guid: 72eec852c61bb404b9afab02ad8347c5, type: 3}
+  m_Sprite: {fileID: -856550142, guid: 9aa84bc791508a7459db11fd00184dc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
