@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class Enemy : MonoBehaviour
     private Vector3 direction;
 
     public bool inrange = false;
+
+
+    public GameObject damageTextPrefab;
+    public string damageText;
+
+    public GameObject TextHolder;
+
 
     private void Awake()
     {
@@ -64,6 +72,15 @@ public class Enemy : MonoBehaviour
         Debug.Log($"Damage Amount: {damageAmount}");
         health -= damageAmount;
         Debug.Log($"Health is Now: {health}");
+
+
+        TextHolder.transform.rotation = Quaternion.identity;
+
+
+        GameObject DamageText = Instantiate(damageTextPrefab, transform.position, Quaternion.identity, TextHolder.transform);
+        damageText = damageAmount.ToString();
+
+        DamageText.GetComponent<TextMeshPro>().SetText(damageText);
 
         if (health <= 0)
         {
