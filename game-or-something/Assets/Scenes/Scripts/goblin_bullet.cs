@@ -41,7 +41,7 @@ public class goblin_bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (Movement.isDashing && collision.collider.tag == "Player")
+        if ((Movement.isDashing && collision.collider.tag == "Player") || collision.collider.tag == "Player Bullets" || collision.collider.tag == "Enemy" || collision.collider.tag == "Enemy Attacks")
         {
             Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
 
