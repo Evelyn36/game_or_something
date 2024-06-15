@@ -22,7 +22,7 @@ public class movement : MonoBehaviour
     private float vectory;
 
     private bool canDash = true;
-    private bool isDashing;
+    public bool isDashing;
     public float dashingPower = 24f;
     public float dashingTime = 0.2f;
     public float dashingCooldown = 1f;

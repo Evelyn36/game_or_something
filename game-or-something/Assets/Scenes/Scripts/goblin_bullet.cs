@@ -19,7 +19,7 @@ public class goblin_bullet : MonoBehaviour
     private Health_system Health;
 
 
-   
+    private movement Movement;
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class goblin_bullet : MonoBehaviour
 
         Health = player.GetComponent<Health_system>();
 
-        
+        Movement = player.GetComponent<movement>();
         
     }
 
@@ -40,10 +40,17 @@ public class goblin_bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        if (Movement.isDashing && collision.collider.tag == "Player")
+        {
+            Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
+
+        }
+
         if (collision.collider.tag == "Player")
         {
             Health = collision.collider.GetComponent<Health_system>();
-            Health.CurHealth -= bullet_damage;
+            Health.TakeDamagePlayer(bullet_damage);
            
 
         }

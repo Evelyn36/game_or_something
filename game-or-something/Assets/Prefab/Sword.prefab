@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc25bb195f3d2064e870be78db516a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SwordDamage: 1
+  SwordDamage: 3
   knockback_strength: 120
   animate: {fileID: 0}
 --- !u!1 &6069062655783277326

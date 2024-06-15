@@ -23,16 +23,22 @@ public class Spawning_Behaviour : MonoBehaviour
     public void FixedUpdate()
     {
      
-        if (ActiveEnemies < 2)
+        if (ActiveEnemies == 0)
         {
-            int randEnemy = Random.Range(0, PossibleEnemies.Length);
-            int randSpawnPoint = Random.Range(0, spawnpoints.Length);
+            for (int i = 0; i < 2; i++)
+            {
+                int randEnemy = Random.Range(0, PossibleEnemies.Length);
+                int randSpawnPoint = Random.Range(0, spawnpoints.Length);
 
-            Debug.Log("Spawn Enemy" + ActiveEnemies);
-            ActiveEnemies++;
+
+                ActiveEnemies++;
 
 
-            Instantiate(PossibleEnemies[randEnemy], spawnpoints[randSpawnPoint].position, Quaternion.identity, EnemyParent.transform);
+                Instantiate(PossibleEnemies[randEnemy], spawnpoints[randSpawnPoint].position, Quaternion.identity, EnemyParent.transform);
+
+            }
+
+            
             
 
             

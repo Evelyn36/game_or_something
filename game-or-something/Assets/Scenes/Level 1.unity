@@ -239,6 +239,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3329679914980379212, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
   m_PrefabInstance: {fileID: 3329679915096634887}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &255786065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3329679914980379209, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+  m_PrefabInstance: {fileID: 3329679915096634887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255786059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a44ce6ac60af34d9f1e37e8b07cb7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &255786067 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3329679914980379210, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+  m_PrefabInstance: {fileID: 3329679915096634887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &372772417
 GameObject:
   m_ObjectHideFlags: 0
@@ -5077,6 +5093,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2011986796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011986797}
+  m_Layer: 0
+  m_Name: Text Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2011986797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011986796}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 14.285715, y: 14.285715, z: 20}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 255786067}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2045545097
 GameObject:
   m_ObjectHideFlags: 0
@@ -6452,6 +6499,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3329679914980379218, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: Movement
+      value: 
+      objectReference: {fileID: 255786065}
+    - target: {fileID: 3329679914980379218, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: TextHolder
+      value: 
+      objectReference: {fileID: 2011986796}
+    - target: {fileID: 3329679914980379218, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: damageTextPrefab
+      value: 
+      objectReference: {fileID: 5133169945517664777, guid: 5d5aff4c52ccc1747816448fba349832, type: 3}
     - target: {fileID: 6763336106076358108, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
       propertyPath: bullet_knockback
       value: 15
