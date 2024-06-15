@@ -26,15 +26,26 @@ public class Enemy : MonoBehaviour
 
     public GameObject TextHolder;
 
+    public GameObject FreezeManager;
+    private FreezeFrames Freeze_script;
 
-    private void Awake()
+    public GameObject Spawners;
+    Spawning_Behaviour Spawning_script;
+
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        Freeze_script = FreezeManager.GetComponent<FreezeFrames>();
+        Mathf.Clamp(health, 0, maxHealth);
+        
     }
     void Start()
     {
         health = maxHealth;
         target = GameObject.Find("Player").transform;
+        Spawners = GameObject.Find("Enemy Spawners");
+        Spawning_script = Spawners.GetComponent<Spawning_Behaviour>();
+
     }
 
     private void Update()
@@ -74,8 +85,13 @@ public class Enemy : MonoBehaviour
         Debug.Log($"Health is Now: {health}");
 
 
+        Freeze_script.timeoffreeze = 0.02f;
+        Freeze_script.FreezeTime();
+
         TextHolder.transform.rotation = Quaternion.identity;
 
+
+        
 
         GameObject DamageText = Instantiate(damageTextPrefab, transform.position, Quaternion.identity, TextHolder.transform);
         damageText = damageAmount.ToString();
@@ -84,7 +100,11 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            Spawning_script.RemoveEnemy();
+
             Destroy(gameObject);
+            
+
             OnEnemyKilled?.Invoke(this);
         }
 

@@ -24,7 +24,9 @@ public class knockback_feedback : MonoBehaviour
 
     private IEnumerator Reset()
     {
-        yield return new WaitForSeconds(delay);
+
+       
+        yield return new WaitForSecondsRealtime(delay);
         rb2d.velocity = Vector3.zero;
         OnDone?.Invoke();
     }

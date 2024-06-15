@@ -183,7 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SwordDamage: 1
-  knockback_strength: 5
+  knockback_strength: 120
+  animate: {fileID: 0}
 --- !u!1 &6069062655783277326
 GameObject:
   m_ObjectHideFlags: 0

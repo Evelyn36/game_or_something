@@ -12,7 +12,7 @@ public class pistol_bullet_movement : MonoBehaviour
     private shooting shooting_script;
     private float bullet_speed;
     private float bullet_damage;
-    private float bullet_knockback;
+    
     private Enemy enemy;
     private float knockback_strength;
     
@@ -72,8 +72,6 @@ public class pistol_bullet_movement : MonoBehaviour
     }
 
 
-   
-
-
+  
 
 }
