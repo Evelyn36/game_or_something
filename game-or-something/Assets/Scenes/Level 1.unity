@@ -232,7 +232,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &255786059 stripped
 GameObject:
@@ -440,7 +440,7 @@ Transform:
   - {fileID: 940978260}
   - {fileID: 981449703}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &617687062
 GameObject:
@@ -635,12 +635,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689391455}
   m_LocalRotation: {x: 0, y: 0, z: -0.02478342, w: 0.99969286}
-  m_LocalPosition: {x: 32.69, y: 17.78, z: 0}
+  m_LocalPosition: {x: 33.449, y: 17.913, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781811701
 GameObject:
@@ -751,7 +751,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &823302347
 GameObject:
@@ -5091,7 +5091,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2011986796
 GameObject:
@@ -6451,6 +6451,14 @@ PrefabInstance:
       propertyPath: deacceleration
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3329679914980379209, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: AttackingMovementPercentage
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329679914980379209, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: ReducedAttackingMovementPercentage
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 3329679914980379210, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6511,6 +6519,22 @@ PrefabInstance:
       propertyPath: damageTextPrefab
       value: 
       objectReference: {fileID: 5133169945517664777, guid: 5d5aff4c52ccc1747816448fba349832, type: 3}
+    - target: {fileID: 3329679914980379219, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 255786065}
+    - target: {fileID: 3329679914980379219, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: MaxAttackLength
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329679914980379219, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: maxAttackMovespeed
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329679914980379219, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
+      propertyPath: attackMovementDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6763336106076358108, guid: 35e28d6ca2b8c2c4180053ba1fa17574, type: 3}
       propertyPath: bullet_knockback
       value: 15
@@ -6534,7 +6558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6857272955526047973, guid: 1a4558b33dc46274b8e46cd11784c91b, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6857272955526047973, guid: 1a4558b33dc46274b8e46cd11784c91b, type: 3}
       propertyPath: m_LocalPosition.x

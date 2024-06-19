@@ -6,8 +6,7 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
 
-    private Transform player;
-    private BoxCollider2D hitbox;
+
     private Rigidbody2D prb;
     public float MaxmovementSpeed;
     private float Maxspeed;
@@ -27,15 +26,21 @@ public class movement : MonoBehaviour
     public float dashingTime = 0.2f;
     public float dashingCooldown = 1f;
 
+
+    public float AttackingMovementPercentage;
+
     private Vector2 moveInput;
 
+    public bool isAttacking = false;
+
     [SerializeField] private TrailRenderer tr;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GetComponent<Transform>();
-        hitbox = GetComponent<BoxCollider2D>();
+
         prb = GetComponent<Rigidbody2D>();
         Maxspeed = MaxmovementSpeed / 100;
     }
@@ -47,7 +52,11 @@ public class movement : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && canDash)
+        if (isAttacking)
+        {
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && !isAttacking)
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
@@ -103,7 +112,10 @@ public class movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!(isDashing))
+
+        
+
+        if (!(isDashing) && !isAttacking)
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
@@ -151,8 +163,17 @@ public class movement : MonoBehaviour
             
         }
 
-        
 
+        if (isAttacking)
+        {
+
+
+            prb.velocity = prb.velocity * AttackingMovementPercentage;
+
+
+
+
+        }
     }
     private IEnumerator Dash(Vector2 MInput)
     {

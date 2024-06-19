@@ -16,7 +16,7 @@ public class Spawning_Behaviour : MonoBehaviour
     void Start()
     {
         ActiveEnemies = 0;
-        Debug.Log(ActiveEnemies);
+        
     }
 
     
@@ -51,10 +51,9 @@ public class Spawning_Behaviour : MonoBehaviour
 
     public void RemoveEnemy()
     {
-        Debug.Log("remove enemy invoked");
-        Debug.Log(ActiveEnemies);
+       
         ActiveEnemies --;
-        Debug.Log(ActiveEnemies);
+       
 
     }
 

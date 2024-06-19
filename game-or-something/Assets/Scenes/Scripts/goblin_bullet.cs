@@ -23,6 +23,9 @@ public class goblin_bullet : MonoBehaviour
 
     void Start()
     {
+
+        player = GameObject.FindGameObjectWithTag("Player");
+
         rb = gameObject.GetComponent<Rigidbody2D>();
 
         Health = player.GetComponent<Health_system>();
@@ -43,8 +46,8 @@ public class goblin_bullet : MonoBehaviour
 
         if ((Movement.isDashing && collision.collider.tag == "Player") || collision.collider.tag == "Player Bullets" || collision.collider.tag == "Enemy" || collision.collider.tag == "Enemy Attacks")
         {
-            Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
-
+            //Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
+            return;
         }
 
         if (collision.collider.tag == "Player")

@@ -7,20 +7,25 @@ public class Sword_Damage : MonoBehaviour
 
     private Enemy enemy;
 
+    private GameObject player;
+    private attack_sword sword_script;
+
     public float SwordDamage;
     public float knockback_strength;
 
-    public Animator animate;
+    private Animator animate;
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.Find("Player");
+        sword_script = player.GetComponent<attack_sword>();
+        animate = gameObject.GetComponentInParent<Animator>();
     }
     // Update is called once per frame
     void Update()
     {
-
-
+        
+  
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
