@@ -8,6 +8,11 @@ public class camera_movement : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(player.GetComponentInParent<Transform>().position.x, player.GetComponentInParent<Transform>().position.y, -10);
+
+        if (player != null)
+        {
+            transform.position = new Vector3(player.GetComponentInParent<Transform>().position.x, player.GetComponentInParent<Transform>().position.y, -10);
+        }
+        
     }
 }

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SwordDamage: 3
-  knockback_strength: 120
+  knockback_strength: 150
 --- !u!61 &6290343098923475933
 BoxCollider2D:
   m_ObjectHideFlags: 0

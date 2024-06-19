@@ -21,7 +21,7 @@ public class goblin_bullet : MonoBehaviour
 
     private movement Movement;
 
-    void Start()
+    void Awake()
     {
 
         player = GameObject.FindGameObjectWithTag("Player");

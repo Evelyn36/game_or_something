@@ -30,7 +30,10 @@ public class Enemy : MonoBehaviour
     private FreezeFrames Freeze_script;
 
     public GameObject Spawners;
-    Spawning_Behaviour Spawning_script;
+    private Spawning_Behaviour Spawning_script;
+
+    private bool EnemyRemoved = false;
+
 
     void Awake()
     {
@@ -38,6 +41,7 @@ public class Enemy : MonoBehaviour
         Freeze_script = FreezeManager.GetComponent<FreezeFrames>();
         Mathf.Clamp(health, 0, maxHealth);
         
+
     }
     void Start()
     {
@@ -85,7 +89,7 @@ public class Enemy : MonoBehaviour
         Debug.Log($"Health is Now: {health}");
 
 
-        Freeze_script.timeoffreeze = 0.02f;
+        Freeze_script.timeoffreeze = 0.05f;
         Freeze_script.FreezeTime();
 
         TextHolder.transform.rotation = Quaternion.identity;
@@ -98,9 +102,13 @@ public class Enemy : MonoBehaviour
 
         DamageText.GetComponent<TextMeshPro>().SetText(damageText);
 
-        if (health <= 0)
+        if (health <= 0 && !EnemyRemoved)
         {
+
+            Spawning_script = Spawners.GetComponent<Spawning_Behaviour>();
             Spawning_script.RemoveEnemy();
+            EnemyRemoved = true;
+            
 
             Destroy(gameObject);
             

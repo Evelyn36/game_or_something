@@ -19,10 +19,25 @@ public class Spawning_Behaviour : MonoBehaviour
         
     }
 
-    
+
+
+    private void Update()
+    {
+        if (EnemyParent.transform.childCount == 0)
+        {
+
+            ActiveEnemies = 0;
+        }
+    }
+
     public void FixedUpdate()
     {
      
+        if (ActiveEnemies < 0){
+
+            ActiveEnemies = 0;
+        }
+
         if (ActiveEnemies == 0)
         {
             for (int i = 0; i < 2; i++)
@@ -44,6 +59,7 @@ public class Spawning_Behaviour : MonoBehaviour
             
 
         }
+
 
 
     }

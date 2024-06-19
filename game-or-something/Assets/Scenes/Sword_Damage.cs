@@ -24,7 +24,12 @@ public class Sword_Damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GetComponent<SpriteRenderer>().enabled == false)
+        {
+            Transform parent = GetComponentInParent<Transform>();
+
+            Destroy(parent.gameObject);
+        }
   
     }
 

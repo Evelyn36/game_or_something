@@ -19,6 +19,7 @@ public class goblinDash : MonoBehaviour
     private GameObject player;
 
     private Enemy enemy;
+    private float Distance;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +32,13 @@ public class goblinDash : MonoBehaviour
    
     void FixedUpdate()
     {
+        
 
-
-        float Distance = Vector2.Distance(transform.position, player.transform.position);
+        if (player != null)
+        {
+            Distance = Vector2.Distance(transform.position, player.transform.position);
+        }
+        
         if (Distance < dashingRange)
         {
             enemy.inrange = true;
@@ -58,7 +63,7 @@ public class goblinDash : MonoBehaviour
     private IEnumerator Dash(Vector2 MInput)
     {
 
-        Debug.Log("enemy Dashed");
+        
         canDash = false;
                 
         for (int i = 0; i < 10; i++)
