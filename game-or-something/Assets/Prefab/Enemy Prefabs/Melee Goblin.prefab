@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1008734518932655051}
   - component: {fileID: 1008734518932655045}
   - component: {fileID: 1535943136224473307}
+  - component: {fileID: -7625684124344519472}
   m_Layer: 6
   m_Name: Melee Goblin
   m_TagString: Enemy
@@ -155,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 5
-  moveSpeed: 12
+  moveSpeed: 7
   target: {fileID: 0}
   inrange: 0
   damageTextPrefab: {fileID: 5133169945517664777, guid: 5d5aff4c52ccc1747816448fba349832, type: 3}
@@ -223,3 +224,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.2
+--- !u!114 &-7625684124344519472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008734518932655055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7746d6dce505f4ab4b0e64f601022c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashingPower: 20
+  dashingTime: 0.2
+  dashingCooldown: 3
+  dashingRange: 2
