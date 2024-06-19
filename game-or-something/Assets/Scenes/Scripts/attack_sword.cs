@@ -89,7 +89,11 @@ public class attack_sword : MonoBehaviour
         movement.isAttacking = true;
         yield return new WaitForSeconds(0.25f);
 
-        StartCoroutine(AttackBuffer());
+        if (!canBuffer) {
+
+            StartCoroutine(AttackBuffer());
+        }
+        
 
         movement.isAttacking = false;
         isAttacking = false;
